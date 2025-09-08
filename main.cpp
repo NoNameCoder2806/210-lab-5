@@ -10,9 +10,11 @@ int swap(int*, int*);
 
 // Main function
 int main() {
-    // Declare 2 pointers x and y
+    // Dynamically declare 2 pointers x and y
     int* x = nullptr;
     int* y = nullptr;
+    x = new int;
+    y = new int;
 
     // Assign x to point at number 5, y to point at number 10
     *x = 5;
@@ -40,7 +42,7 @@ int main() {
 */
 int swap(int* a, int* b) {
     int temp = *a;
-    a = b;
+    *a = *b;
     *b = temp;
     return *a + *b;
 }
