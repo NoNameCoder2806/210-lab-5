@@ -9,7 +9,7 @@ using namespace std;
 int swap(int*, int*);
 
 // Main function
-int main() 
+int main()
 {
     // Dynamically declare 2 pointers x and y
     int* x = nullptr;
@@ -17,7 +17,7 @@ int main()
     x = new int;
     y = new int;
 
-    // Assign x to point at number 5, y to point at number 10
+    // Assign 5 and 10 to the memory locations x and y point to
     *x = 5;
     *y = 10;
 
@@ -31,6 +31,11 @@ int main()
     // Print the values x and y point to after the swap and the sum of them
     cout << "x = " << *x << " | y = " << *y << endl;
     cout << "sum = " << sum << endl;
+
+    // Delete the pointers
+    delete x;
+    delete y;
+
     return 0;
 }
 
@@ -53,5 +58,5 @@ int swap(int* a, int* b)
     *b = temp;
 
     // Return the sum of the values the 2 pointers are pointing to
-    return *a + *b;
+    return *a + *b;    // We dereference the pointers to get the values
 }
