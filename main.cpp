@@ -6,16 +6,27 @@
 using namespace std;
 
 // Function prototypes
-int swap(int &, int &);
+int swap(int*, int*);
 
 // Main function
 int main() {
-    int x = 5, y = 10;
-    cout << "x = " << x << "  | y = " << y << endl;
+    // Declare 2 pointers x and y
+    int* x = nullptr;
+    int* y = nullptr;
 
+    // Assign x to point at number 5, y to point at number 10
+    *x = 5;
+    *y = 10;
+
+    // Print the value that x and y is pointing to by dereferencing the pointers
+    cout << "x = " << *x << "  | y = " << *y << endl;
+
+    // Swap the values
     cout << "Swapping...\n";
     int sum = swap(x, y);
-    cout << "x = " << x << " | y = " << y << endl;
+
+    // Print the values x and y point to after the swap and the sum of them
+    cout << "x = " << *x << " | y = " << *y << endl;
     cout << "sum = " << sum << endl;
     return 0;
 }
@@ -27,9 +38,9 @@ int main() {
     Arguments: 2 int pointers
     Returns: the sum of the 2 numbers
 */
-int swap(int &a, int &b) {
-    int temp = a;
+int swap(int* a, int* b) {
+    int temp = *a;
     a = b;
-    b = temp;
-    return a + b;
+    *b = temp;
+    return *a + *b;
 }
