@@ -9,7 +9,8 @@ using namespace std;
 int swap(int*, int*);
 
 // Main function
-int main() {
+int main() 
+{
     // Dynamically declare 2 pointers x and y
     int* x = nullptr;
     int* y = nullptr;
@@ -40,9 +41,17 @@ int main() {
     Arguments: 2 int pointers
     Returns: the sum of the 2 numbers
 */
-int swap(int* a, int* b) {
+int swap(int* a, int* b) 
+{
+    // Create a new int value and let it hold the value pointer a is pointing to
     int temp = *a;
+
+    // Let pointer a points to the value pointer b is pointing to
     *a = *b;
+    
+    // Let pointer b points to the value of temp
     *b = temp;
+
+    // Return the sum of the values the 2 pointers are pointing to
     return *a + *b;
 }
