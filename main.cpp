@@ -15,7 +15,7 @@ int main()
     int x = 5;
     int y = 10;
 
-    // Print the value that x and y is pointing to by dereferencing the pointers
+    // Print the value of x and y
     cout << "x = " << x << "  | y = " << y << endl;
 
     // Swap the values
