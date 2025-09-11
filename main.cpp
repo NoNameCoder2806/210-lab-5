@@ -11,30 +11,20 @@ int swap(int*, int*);
 // Main function
 int main()
 {
-    // Dynamically declare 2 pointers x and y
-    int* x = nullptr;
-    int* y = nullptr;
-    x = new int;
-    y = new int;
-
-    // Assign 5 and 10 to the memory locations x and y point to
-    *x = 5;
-    *y = 10;
+    // Declare 2 int variables x and y and let them hold the values 5 and 10
+    int x = 5;
+    int y = 10;
 
     // Print the value that x and y is pointing to by dereferencing the pointers
-    cout << "x = " << *x << "  | y = " << *y << endl;
+    cout << "x = " << x << "  | y = " << y << endl;
 
     // Swap the values
     cout << "Swapping...\n";
-    int sum = swap(x, y);
+    int sum = swap(&x, &y);
 
     // Print the values x and y point to after the swap and the sum of them
-    cout << "x = " << *x << " | y = " << *y << endl;
+    cout << "x = " << x << " | y = " << y << endl;
     cout << "sum = " << sum << endl;
-
-    // Delete the pointers
-    delete x;
-    delete y;
 
     return 0;
 }
@@ -42,7 +32,7 @@ int main()
 // Function implementations
 /*
     swap()
-    Allows the user to enter 2 int pointers. The function will swap them and return the sum value
+    Swap the values the 2 pointers point to and return the sum.
     Arguments: 2 int pointers
     Returns: the sum of the 2 numbers
 */
